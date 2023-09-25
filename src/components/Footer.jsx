@@ -1,6 +1,11 @@
-import React from 'react';
-import { FaFacebook, FaTwitter, FaInstagram, FaPhone } from 'react-icons/fa';
-import { FiMail } from 'react-icons/fi';
+import React from "react";
+import {
+  FaFacebook,
+  FaTwitter,
+  FaInstagram,
+  FaPhone,
+} from "react-icons/fa";
+import { FiMail } from "react-icons/fi";
 
 const Footer = () => {
   return (
@@ -23,6 +28,7 @@ const Footer = () => {
               <FaTwitter className="text-2xl mr-2" />
               <p>@Pharma-Aid</p>
             </div>
+            
           </div>
         </div>
         <div class="flex flex-col">
@@ -41,15 +47,15 @@ const Footer = () => {
             </p>
             <p className="flex justify-center mb-9">
               <FiMail className="text-2xl mr-2 mt-3" />
-              <p className="mt-3">info@pharmaidafrica.org</p>
+              <p className="mt-3">info@pharmaidafrica.com</p>
             </p>
+            
           </p>
         </div>
       </div>
 
       <p className="flex items-center justify-center mt-7">
-        Copyright © 2023 Pharmaceutical Market Access Initiative and
-        Development. All rights reserved.{' '}
+        Copyright © 2023 Pharmaceutical Market Access Initiative and Development. All rights reserved.{" "}
       </p>
     </footer>
   );

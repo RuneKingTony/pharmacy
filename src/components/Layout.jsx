@@ -1,10 +1,11 @@
 import React from 'react';
 import About from './About';
-// import Board from './Board'
+import Board from './Board';
 import Facts from './Facts';
 import Footer from './Footer';
-// import Gallery from './Gallery'
+import Gallery from './Gallery';
 import Hero from './Hero';
+import Info from './Info';
 import Navbar from './Navbar';
 import Vision from './Vision';
 
@@ -15,11 +16,12 @@ const Layout = () => {
 
       <Navbar />
       <Hero />
-      {/* <Gallery/> */}
       <About />
       <Vision />
+      <Info />
+      <br />
+      <Gallery />
       <Facts />
-      {/* <Board/> */}
       <Footer />
     </div>
   );

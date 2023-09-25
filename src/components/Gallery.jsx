@@ -1,58 +1,63 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import sprite from './sprite.svg';
 
+// Define an array of carousel items
+const carouselItems = [
+  {
+    id: 1,
+    image: '../assets/images/imaged.jpeg',
+    title: 'Highlights',
+    description:
+      'The Executive Director, Pharma-AID Africa, Dr. Chinedu Ayogu receiving a letter of gratitude from the Director of Pharmacy, FCT PHC Board, Hajia Aishatu Ahmed-Fari.',
+  },
+  {
+    id: 2,
+    image: '../assets/images/image12.jpeg',
+    title: 'Image 2',
+    description: 'Description for Image 2',
+  },
+  {
+    id: 3,
+    image: '../assets/images/image13.jpeg',
+    title: 'Image 3',
+    description: 'Description for Image 3',
+  },
+  {
+    id: 4,
+    image: '../assets/images/image111.jpeg',
+    title: 'Image 4',
+    description: 'Description for Image 4',
+  },
+  {
+    id: 5,
+    image: '../assets/images/cert.jpeg',
+    title: 'Image 5',
+    description: 'Description for Image 5',
+  },
+  // Add more carousel items here
+];
 
 const Gallery = () => {
-  // Sample data array of carousel items
-  const carouselItems = [
-    {
-      id: 1,
-      image: '',
-      title: 'Image 1',
-      description: 'Description for Image 1',
-    },
-    {
-      id: 2,
-      image: 'https://placehold.it/800x400',
-      title: 'Image 2',
-      description: 'Description for Image 2',
-    },
-    {
-      id: 3,
-      image: 'https://placehold.it/800x400',
-      title: 'Image 3',
-      description: 'Description for Image 3',
-    },
-    // Add more carousel items here...
-  ];
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % carouselItems.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [carouselItems.length]);
-
   return (
-    <div className="relative">
-      <div className="w-full h-96 overflow-hidden">
-        {carouselItems.map((item, index) => (
-          <div
-            key={item.id}
-            className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ${
-              index === currentIndex ? 'opacity-100' : 'opacity-0'
-            }`}
-          >
-            <img className="w-full h-full object-cover" src={item.image} alt={item.title} />
-            <div className="absolute bottom-0 left-0 right-0 p-4 text-white bg-black bg-opacity-50">
-              <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-              <p className="text-sm">{item.description}</p>
+    <div className="carousel">
+      <div className="box max-h-vh ">
+        <Carousel useKeyboardArrows={true} className="carousel-style">
+          {carouselItems.map((items, index) => (
+            <div className="max-h-max">
+              <img
+                src={items.image}
+                alt={items.title}
+                style={{ maxHeight: 1000 }}
+              />
+              <p className="legend">{items.description}</p>
             </div>
-          </div>
-        ))}
+          ))}
+        </Carousel>
       </div>
     </div>
   );
 };
+
 export default Gallery;
