@@ -16,13 +16,13 @@ const carouselItems = [
     id: 2,
     image: '../assets/images/image12.jpeg',
     title: 'Image 2',
-    description: 'Description for Image 2',
+    description: 'Event Highlights',
   },
   {
     id: 3,
     image: '../assets/images/image13.jpeg',
     title: 'Image 3',
-    description: 'Description for Image 3',
+    description: 'Event Highlights',
   },
   {
     id: 4,
@@ -34,7 +34,8 @@ const carouselItems = [
     id: 5,
     image: '../assets/images/cert.jpeg',
     title: 'Image 5',
-    description: 'Description for Image 5',
+    description:
+      'Certificate of Appreciation from the FCT Primary health care Board',
   },
   // Add more carousel items here
 ];
