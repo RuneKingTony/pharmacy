@@ -41,16 +41,33 @@ const carouselItems = [
 ];
 
 const Gallery = () => {
+  // const [index, setIndex] = useState(0);
+
+  // const handleSelect = (selectedIndex, e) => {
+  //   setIndex(selectedIndex);
+  // };
+
   return (
     <div className="carousel">
       <div className="box max-h-vh ">
-        <Carousel useKeyboardArrows={true} className="carousel-style">
+        <Carousel
+          // activeIndex={index}
+          // onSelect={handleSelect}
+          useKeyboardArrows={true}
+          className="carousel"
+          id="carousel"
+          showThumbs={false}
+        >
           {carouselItems.map((items, index) => (
             <div className="max-h-max">
               <img
+                className="d-block w-100 "
                 src={items.image}
                 alt={items.title}
-                style={{ maxHeight: 1000 }}
+                style={{
+                  maxHeight: 500,
+                  objectFit: 'contain',
+                }}
               />
               <p className="legend">{items.description}</p>
             </div>
