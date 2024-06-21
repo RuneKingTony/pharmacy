@@ -1,0 +1,40 @@
+.carousel {
+    max-width: 800px; /* Adjust as needed */
+    margin: auto;
+  }
+  
+  .year-navigation {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .year-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    transition: background 0.3s ease;
+  }
+  
+  .year-button.active {
+    background: #2b890f; /* Active button background color */
+    color: white; /* Active button text color */
+  }
+  
+  .box {
+    overflow: hidden;
+  }
+  
+  .carousel .slide img {
+    margin: 0 auto;
+  }
+  
+  .legend {
+    text-align: center;
+    margin-top: 10px;
+    font-style: italic;
+    color: #666;
+  }
+  

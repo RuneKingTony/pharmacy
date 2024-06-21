@@ -1,62 +1,58 @@
 import React from "react";
-import {
-  FaFacebook,
-  FaTwitter,
-  FaInstagram,
-  FaPhone,
-} from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaInstagram, FaPhone } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 
 const Footer = () => {
   return (
-    <footer class="bg-gray-500 text-white py-10" id="footer">
-      <div class="container grid grid-cols-1 gap-6 px-4 mx-auto md:grid-cols-3 md:px-0">
-        <div class="flex flex-col">
-          <h2 class="text-3xl font-medium mb-4 max-w-lg mx-auto">
-            Stay Connected
-          </h2>
-          <div class="max-w-lg mx-auto">
+    <footer className="bg-gray-800 text-white py-12">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          {/* Left Section */}
+          <div className="flex flex-col">
+            <h2 className="text-3xl font-semibold mb-6 text-center md:text-left">
+              Stay Connected
+            </h2>
             <div className="flex items-center mb-4">
-              <FaFacebook className="text-2xl mr-2" />
-              <p>@Pharma-Aid</p>
+              <FaFacebook className="text-3xl mr-3 text-gray-400 hover:text-gray-300 cursor-pointer" />
+              <p className="text-lg">/Pharma-Aid</p>
             </div>
             <div className="flex items-center mb-4">
-              <FaInstagram className="text-2xl mr-2" />
-              <p>@Pharma-Aid</p>
+              <FaInstagram className="text-3xl mr-3 text-gray-400 hover:text-gray-300 cursor-pointer" />
+              <p className="text-lg">/Pharma-Aid</p>
             </div>
             <div className="flex items-center mb-4">
-              <FaTwitter className="text-2xl mr-2" />
-              <p>@Pharma-Aid</p>
+              <FaTwitter className="text-3xl mr-3 text-gray-400 hover:text-gray-300 cursor-pointer" />
+              <p className="text-lg">/Pharma-Aid</p>
             </div>
-            
           </div>
-        </div>
-        <div class="flex flex-col">
-          <h2 class="text-3xl font-medium mb-4 max-w-lg mx-auto">
-            Need more info?
-          </h2>
-          <p class="max-w-lg mx-auto">
-            Call Us on:
-            <p className="flex">
-              <FaPhone className="text-2xl mr-2 mt-3" />
-              <p className="mt-3">+2348034533143</p>
-            </p>
-            <p className="flex">
-              <FaPhone className="text-2xl mr-2 mt-3" />
-              <p className="mt-3">+2358036253109</p>
-            </p>
-            <p className="flex justify-center mb-9">
-              <FiMail className="text-2xl mr-2 mt-3" />
-              <p className="mt-3">info@pharmaidafrica.com</p>
-            </p>
-            
-          </p>
-        </div>
-      </div>
 
-      <p className="flex items-center justify-center mt-7">
-        Copyright © 2023 Pharmaceutical Market Access Initiative and Development. All rights reserved.{" "}
-      </p>
+          {/* Middle Section */}
+          <div className="flex flex-col">
+            <h2 className="text-3xl font-semibold mb-6 text-center md:text-left">
+              Need more info?
+            </h2>
+            <div className="flex items-center mb-4">
+              <FaPhone className="text-3xl mr-3 text-gray-400" />
+              <p className="text-lg">+234 803 453 3143</p>
+            </div>
+            <div className="flex items-center mb-4">
+              <FaPhone className="text-3xl mr-3 text-gray-400" />
+              <p className="text-lg">+235 803 625 3109</p>
+            </div>
+            <div className="flex items-center mb-4">
+              <FiMail className="text-3xl mr-3 text-gray-400" />
+              <p className="text-lg">info@pharmaidafrica.com</p>
+            </div>
+          </div>
+
+          
+        </div>
+
+        {/* Copyright Section */}
+        <p className="text-center mt-12 text-gray-400">
+          &copy; 2023 Pharmaceutical Market Access Initiative and Development. All rights reserved.
+        </p>
+      </div>
     </footer>
   );
 };

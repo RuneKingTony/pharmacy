@@ -1,39 +1,54 @@
-import React from 'react'
-
+import React from 'react';
+import { useSpring, animated } from '@react-spring/web';
 
 const Hero = () => {
-  
-  const backgroundImage = 'url("assets/images/pharmback.jpeg")';
+  const backgroundImage = 'url("assets/images/eren.jpeg")';
 
+  const fadeIn = useSpring({
+    from: { opacity: 0, transform: 'translateY(-20px)' },
+    to: { opacity: 1, transform: 'translateY(0)' },
+    delay: 800,
+  });
+
+  const fadeInDelayed = useSpring({
+    from: { opacity: 0, transform: 'translateY(-20px)' },
+    to: { opacity: 1, transform: 'translateY(0)' },
+    delay: 900,
+  });
+
+  const fadeInMoreDelayed = useSpring({
+    from: { opacity: 0, transform: 'translateY(-20px)' },
+    to: { opacity: 1, transform: 'translateY(0)' },
+    delay: 1000,
+  });
 
   return (
-    
-      <div className="bg-cover bg-center" style={{ backgroundImage }} id="hero">
-      <div className= "max-w-7xl mx-auto px-4 sm:px-6 ">
-
-        <div className="flex flex-col items-center justify-center py-40 text-center">
-          <h1 className="font-bold text-lg text-white p-4">
-           Welcome to
-          </h1>
-          <h1 className="text-4xl font-bold text-green sm:text-5xl md:text-6xl">
-           Pharma-AID <span className="text-white">Africa</span>
-          </h1>
-          <p className="mt-4 text-xl text-white pt-4">
-          Helping to overcome the barriers in patient access and market access to medicine in Nigeria and Africa at large.
-         </p>
-         <div className="mt-8 p-4">
-            <a
-              href="#"
-              className="bg-green text-white rounded-full px-8 py-3 text-xl font-semibold shadow-lg"
-            >
-              Get Started
-            </a>
-        
+    <div className="relative bg-cover bg-center h-screen" style={{ backgroundImage, height: '75vh' }} id="hero">
+      <div className="absolute inset-0 bg-black opacity-50"></div> {/* Dark overlay */}
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center" style={{ height: '80vh' }}>
+        <div className="text-left text-white max-w-3xl">
+          <animated.h1
+            className="font-extrabold text-3xl md:text-4xl leading-tight mb-4"
+            style={fadeIn}
+          >
+            Welcome to <span className="text-green-500">Pharma-AID</span> <span className="text-green-700">Africa</span>
+          </animated.h1>
+          <animated.h2
+            className="text-2xl md:text-3xl leading-tight mb-6"
+            style={fadeInDelayed}
+          >
+            Overcoming Barriers to Medicine Access
+          </animated.h2>
+          <animated.p
+            className="text-lg leading-relaxed mb-8"
+            style={fadeInMoreDelayed}
+          >
+            We are dedicated to improving patient and market access to medicine across Nigeria and Africa.
+          </animated.p>
         </div>
       </div>
     </div>
-    </div>
-  )
+  );
 }
 
-export default Hero
+export default Hero;
